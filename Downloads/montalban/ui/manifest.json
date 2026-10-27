@@ -1,0 +1,18 @@
+{
+  "name": "Montalbán - Sistema de Gestión Bibliotecaria",
+  "short_name": "Montalbán Biblio",
+  "description": "Sistema de Gestión de Biblioteca e Inventario en Arquitectura N-Tier",
+  "start_url": "./index.php",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#0d6efd",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

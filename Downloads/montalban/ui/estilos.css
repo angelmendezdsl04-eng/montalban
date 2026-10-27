@@ -1,0 +1,295 @@
+/* ==========================================================
+   Montalbán - Sistema de Gestión Bibliotecaria
+   Hoja de estilos única para todo el sistema
+   ========================================================== */
+
+:root {
+    --marino: #0b2443;
+    --marino-claro: #1d3f6b;
+    --marino-oscuro: #07182e;
+    --tinta: #14243a;
+    --tinta-suave: #5a6b82;
+    --fondo: #f1f4f8;
+    --superficie: #ffffff;
+    --borde: #d3dce8;
+    --encabezado-tabla: #e6ecf4;
+    --hover-fila: #f6f8fb;
+    --foco: #b88a2e;
+
+    --ok: #1f6b58;
+    --ok-fondo: #e3f1ed;
+    --alerta: #8a6112;
+    --alerta-fondo: #f8efd9;
+    --peligro: #a33a35;
+    --peligro-fondo: #f7e4e3;
+    --info: #1d3f6b;
+    --info-fondo: #e3eaf4;
+}
+
+/* ---------- Base ---------- */
+body {
+    background: var(--fondo);
+    color: var(--tinta);
+    font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 0.95rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+h1, h2, h3, h4, h5, h6, input, select, button, table, label {
+    font-family: "Montserrat", system-ui, sans-serif;
+}
+main { flex: 1 0 auto; }
+code { color: var(--marino-claro); background: var(--info-fondo); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85em; }
+
+/* ---------- Barra de navegación ---------- */
+.barra {
+    background: var(--superficie);
+    border-bottom: 3px solid var(--marino);
+}
+.barra-interior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    min-height: 84px;
+}
+.marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    text-decoration: none;
+    color: var(--marino);
+}
+.marca img { height: 52px; width: auto; }
+.marca-texto {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.1;
+}
+.marca-texto small {
+    font-weight: 500;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--tinta-suave);
+    margin-top: 0.2rem;
+}
+.barra-nav { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+.barra-nav a {
+    color: var(--tinta);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.55rem 1rem;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    transition: color .15s, border-color .15s;
+}
+.barra-nav a:hover { color: var(--marino-claro); border-bottom-color: var(--borde); }
+.barra-nav a.activo { color: var(--marino); font-weight: 600; border-bottom-color: var(--foco); }
+
+/* ---------- Encabezado de página ---------- */
+.pagina-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem 0 1.25rem;
+}
+.pagina-encabezado h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--marino);
+    margin: 0 0 0.25rem;
+}
+.pagina-encabezado p { margin: 0; color: var(--tinta-suave); }
+
+/* ---------- Paneles ---------- */
+.panel {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.panel-titulo {
+    background: var(--encabezado-tabla);
+    color: var(--marino);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--borde);
+}
+.panel-cuerpo { padding: 1.25rem; }
+
+/* ---------- Filtros ---------- */
+.filtros {
+    background: var(--superficie);
+    padding: 1.25rem 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--borde);
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.filtros .campo { flex: 1 1 250px; }
+
+/* ---------- Formularios ---------- */
+.form-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--marino-claro);
+    margin-bottom: 0.3rem;
+}
+.form-control, .form-select {
+    border-color: var(--borde);
+    border-radius: 4px;
+    color: var(--tinta);
+    font-size: 0.92rem;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--foco);
+    box-shadow: 0 0 0 0.2rem rgba(184, 138, 46, 0.2);
+}
+
+/* ---------- Botones ---------- */
+.btn { border-radius: 4px; font-weight: 600; font-size: 0.88rem; }
+.btn-marino {
+    background: var(--marino);
+    border: 1px solid var(--marino);
+    color: #fff;
+}
+.btn-marino:hover, .btn-marino:focus { background: var(--marino-claro); border-color: var(--marino-claro); color: #fff; }
+.btn-borde {
+    background: transparent;
+    border: 1px solid var(--marino);
+    color: var(--marino);
+}
+.btn-borde:hover { background: var(--marino); color: #fff; }
+.btn-borde-peligro {
+    background: transparent;
+    border: 1px solid var(--peligro);
+    color: var(--peligro);
+}
+.btn-borde-peligro:hover { background: var(--peligro); color: #fff; }
+.btn-borde-ok {
+    background: transparent;
+    border: 1px solid var(--ok);
+    color: var(--ok);
+}
+.btn-borde-ok:hover { background: var(--ok); color: #fff; }
+.btn-ambar {
+    background: var(--alerta-fondo);
+    border: 1px solid var(--alerta);
+    color: var(--alerta);
+}
+.btn-ambar:hover { background: var(--alerta); color: #fff; }
+
+/* ---------- Tablas ---------- */
+.tabla-datos { margin-bottom: 0; }
+.tabla-datos thead th {
+    background: var(--encabezado-tabla);
+    color: var(--tinta);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--borde);
+    padding: 0.85rem 1rem;
+    white-space: nowrap;
+}
+.tabla-datos tbody td { padding: 0.8rem 1rem; border-color: var(--borde); }
+.tabla-datos tbody tr:hover > * { background: var(--hover-fila); }
+
+/* ---------- Etiquetas y estados ---------- */
+.etiqueta {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    border: 1px solid transparent;
+}
+.etiqueta.neutra { background: var(--encabezado-tabla); color: var(--tinta); border-color: var(--borde); }
+.etiqueta.info { background: var(--info-fondo); color: var(--info); }
+.etiqueta.ok { background: var(--ok-fondo); color: var(--ok); }
+.etiqueta.alerta { background: var(--alerta-fondo); color: var(--alerta); }
+.etiqueta.peligro { background: var(--peligro-fondo); color: var(--peligro); }
+
+.estado { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 500; }
+.estado::before { content: ""; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: currentColor; }
+.estado.disponible { color: var(--ok); }
+.estado.agotado { color: var(--peligro); }
+
+.pie-tabla { margin-top: 0.75rem; font-size: 0.88rem; color: var(--tinta-suave); }
+
+/* ---------- Alertas ---------- */
+.alert { border-radius: 4px; border-width: 1px; border-left-width: 4px; font-size: 0.92rem; }
+.alert-success { background: var(--ok-fondo); border-color: var(--ok); color: var(--ok); }
+.alert-warning { background: var(--alerta-fondo); border-color: var(--alerta); color: var(--alerta); }
+.alert-danger { background: var(--peligro-fondo); border-color: var(--peligro); color: var(--peligro); }
+
+/* ---------- Modales ---------- */
+.modal-content { border: 1px solid var(--borde); border-radius: 6px; overflow: hidden; }
+.modal-header { background: var(--marino); color: #fff; border-bottom: 3px solid var(--foco); }
+.modal-title { font-size: 1rem; font-weight: 600; }
+.modal-footer { background: var(--hover-fila); border-top: 1px solid var(--borde); }
+
+/* ---------- Portada: módulos ---------- */
+.portada { padding: 3.5rem 0 2.5rem; max-width: 780px; }
+.portada .sobretitulo {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--foco);
+    border-bottom: 2px solid var(--foco);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+}
+.portada h1 { font-size: 2.1rem; font-weight: 700; color: var(--marino); margin-bottom: 0.75rem; }
+.portada p { font-size: 1.05rem; color: var(--tinta-suave); margin: 0; }
+
+.modulo {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-top: 4px solid var(--marino);
+    border-radius: 6px;
+    padding: 1.75rem;
+    transition: box-shadow .15s, transform .15s;
+}
+.modulo:hover { box-shadow: 0 6px 18px rgba(11, 36, 67, 0.1); transform: translateY(-2px); }
+.modulo .numero { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; color: var(--foco); margin-bottom: 0.6rem; }
+.modulo h2 { font-size: 1.2rem; font-weight: 600; color: var(--marino); margin-bottom: 0.6rem; }
+.modulo p { color: var(--tinta-suave); flex: 1 1 auto; margin-bottom: 1.5rem; }
+
+/* ---------- Detalle de libro ---------- */
+.ficha { padding: 2rem; }
+.ficha .titulo { font-size: 1.7rem; font-weight: 700; color: var(--marino); margin-bottom: 0.3rem; }
+.ficha .autor { font-size: 1.1rem; color: var(--tinta-suave); margin-bottom: 1.5rem; }
+.ficha-datos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem 2rem; border-top: 1px solid var(--borde); padding-top: 1.5rem; }
+.dato-label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--marino-claro); margin-bottom: 0.25rem; }
+.dato-valor { margin: 0; font-size: 1.05rem; }
+
+/* ---------- Pie de página ---------- */
+.pie {
+    flex-shrink: 0;
+    border-top: 1px solid var(--borde);
+    background: var(--superficie);
+    color: var(--tinta-suave);
+    font-size: 0.82rem;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
